@@ -1,7 +1,7 @@
 import random
 
 
-def guess(x):
+def user_guess(x):
     random_number = random.randint(1,x)    
     guess = 0   
     while guess != random_number:
@@ -32,7 +32,28 @@ def computer_guess(x):
     
     
 
-computer_guess(10)
 
-# guess(20)
+
+def play():
+    print('Welcome, this is a guessing game, where either you or the computer thinks of a secret number and the other player tries to guess what it is')
+    decision = ''
+    choices = ['i', 'c']
+    while decision not in choices:
+        decision = input("Enter 'i' if you want the computer to guess your secret number or 'c' if you want the computer to guess ")
+    if decision== 'i':
+        computer_guess(100)
+    elif decision =='c':
+        x = input('Great, the computer already has a secret number, now take a guess')
+        user_guess(x)
+        
+    
+        
+
+
+
+
+
+
+play()
+
         
